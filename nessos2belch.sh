@@ -1,7 +1,11 @@
 #!/bin/bash
 # nessos2belch 0.1, by James Gallagher, @james1052
-# Extracts http and https targets from Nessus Vulnerabilities by Plugin html report, if plugin IDs 56984 and 22964 are enabled
+# Extracts http and https targets from Nessus Vulnerabilities by Plugin html report.
+# Plugin IDs 10335, 11219, 56984 and 22964 should be enabled and the report should be filtered by these plugin IDs, as well.
+# Probe all ports to find services should be on and Search for SSL/TLS on set to All TCP ports in the Nessus policy.
 # The output can be used to feed to Burp Suite, etc.
+# See the blog post for more information: 
+# https://jamesonhacking.blogspot.com/2022/05/getting-nessus-results-into-burp-with.html
 # Usage: ./nessos2belch.sh nessus-report.html
 
 # Find https targets: Search for tcp and include 2 lines; put everything on one line; look for www; look for tls; clean up the end of the line; dedupe
